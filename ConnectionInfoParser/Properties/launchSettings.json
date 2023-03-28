@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConnectionInfoParser": {
+      "commandName": "Project",
+      "commandLineArgs": "Data.txt"
+    }
+  }
+}
