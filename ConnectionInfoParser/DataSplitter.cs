@@ -10,7 +10,7 @@ namespace ConnectionInfoParaser
         public bool DataIsValid(Data data)
         {
             var str = data.ConnectionString;
-            if (str.Contains("File="))
+            if (str.ToLower().Contains("file="))
             {
                 var pathMatch = Regex.Match(str, @"""[^""]*""");
 
@@ -18,7 +18,7 @@ namespace ConnectionInfoParaser
                     return PathIsValid(pathMatch.Value.Replace('"',' ').Trim());
               
             }
-            else if (str.Contains("Srvr="))
+            else if (str.ToLower().Contains("srvr="))
             {
 
                 var refHostMatch = Regex.Match(str, @"(srvr=)(""[^""]*"")", RegexOptions.IgnoreCase);
